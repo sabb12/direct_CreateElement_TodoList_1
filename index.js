@@ -1,19 +1,19 @@
-const todoList = document.querySelector(".todoList");
-const completedList = document.querySelector(".completedList");
-
+const inputContainer = document.querySelector(".inputContainer");
 const inputValue = document.createElement("input");
 const inputButton = document.createElement("button");
 inputButton.innerText = "Enter";
-document.body.before(inputValue, inputButton);
 
-inputButton.addEventListener("click", (e) => {
+inputContainer.appendChild(inputValue);
+inputContainer.appendChild(inputButton);
+
+inputButton.addEventListener("click", () => {
+  const todoList = document.querySelector(".todoList");
   const todoContainer = document.createElement("div");
   const randomId = Math.floor(Math.random() * 100);
   todoContainer.setAttribute("data-set", randomId);
 
   const todo = document.createElement("div");
   todo.innerText = inputValue.value;
-  console.log("todo:", todo);
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
@@ -23,17 +23,17 @@ inputButton.addEventListener("click", (e) => {
   deleteButton.classList.add("delBtn");
   deleteButton.type = "button";
   deleteButton.innerText = "삭제";
-  // todoContainer.appendChild(todo, checkbox): appendChild로는 2개 동시 못 한다;
+
   todoContainer.append(todo, checkbox, deleteButton);
   todoList.append(todoContainer);
 
   inputValue.value = "";
 
-  deleteButton.addEventListener("click", (e) => {
+  deleteButton.addEventListener("click", () => {
     todoContainer.remove();
   });
 
-  checkbox.addEventListener("click", (e) => {
+  checkbox.addEventListener("click", () => {
     if (checkbox.checked) {
       completedList.append(todoContainer);
     } else {
