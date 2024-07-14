@@ -6,7 +6,11 @@ inputButton.innerText = "Enter";
 inputContainer.appendChild(inputValue);
 inputContainer.appendChild(inputButton);
 
-inputButton.addEventListener("click", () => {
+const addTodo = () => {
+  if (inputValue.value.trim() === "") {
+    return;
+  }
+
   const todoList = document.querySelector(".todoList");
   const todoContainer = document.createElement("div");
   const randomId = Math.floor(Math.random() * 100);
@@ -34,10 +38,19 @@ inputButton.addEventListener("click", () => {
   });
 
   checkbox.addEventListener("click", () => {
+    const completedList = document.querySelector(".completedList");
     if (checkbox.checked) {
       completedList.append(todoContainer);
     } else {
       todoList.append(todoContainer);
     }
   });
+};
+
+inputButton.addEventListener("click", addTodo);
+
+inputValue.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTodo();
+  }
 });
