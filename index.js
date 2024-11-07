@@ -13,7 +13,7 @@ const inputValue = document.createElement("input");
 const inputButton = document.createElement("button");
 inputValue.classList.add('input')
 inputValue.placeholder = "What are your tasks for today?"
-inputButton.classList.add('addBtn')
+inputButton.id = "addBtn";
 inputButton.innerText = "Add";
 
 inputContainer.appendChild(inputValue);
