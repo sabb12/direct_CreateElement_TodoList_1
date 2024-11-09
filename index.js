@@ -47,7 +47,7 @@ doneList.appendChild(doneTitle);
 doneList.appendChild(doneContent);
 todoListContainer.appendChild(doneList);
 
-const addTodo = () => {
+const handleCreateTodo = () => {
   if (inputValue.value.trim() === "") {
     return;
   }
@@ -116,10 +116,10 @@ const addTodo = () => {
   });
 };
 
-inputButton.addEventListener("click", addTodo);
+inputButton.addEventListener("click", handleCreateTodo);
 
 inputValue.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    addTodo();
+    handleCreateTodo();
   }
 });
