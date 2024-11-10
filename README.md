@@ -1,5 +1,5 @@
 ## Project Introduction(프로젝트 소개)
-##### ▪ Direct HTML Generation Using createElement(createElement을 이용한 직접 HTML 생성)로 만든 Todo List
+##### ▪ Direct HTML Generation Using createElement(createElement을 이용한 직접 HTML 생성)로 만든 To Do List
 <br/>
 
 ## What I've learned(배운 점)
