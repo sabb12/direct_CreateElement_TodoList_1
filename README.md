@@ -85,7 +85,7 @@ document.body.appendChild(container);
 
 ## Project Structure(프로젝트 구조)
 ```markdown
-direct_createElement_TodoList_1
+direct_CreateElement_TodoList_1
 ├── index.css
 ├── index.html
 ├── index.js
